@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Current Time : <output id="op"></output></h3>
+    <video width="550" height="400" loop poster="images/falcon.jpg" id="vid">
+        <source src="media/html5.mp4">
+        <source src="media/html5.webm">
+    </video>
+    <button onclick="playvid()">Play</button>
+    <button onclick="pausevid()">Pause</button>
+    <button onclick="stopvid()">Stop</button>
+    <button onclick="rewindvid()">Rewind</button>
+    <script>
+        setInterval(function(){
+            document.getElementById("op").value=document.getElementById("vid").currentTime;
+        },10);
+        function playvid(){
+            document.getElementById("vid").play();
+        }
+        function pausevid(){
+            document.getElementById("vid").pause();
+        }
+        function stopvid(){
+            document.getElementById("vid").pause();
+            document.getElementById("vid").currentTime=0;
+        }
+        function rewindvid(){
+            document.getElementById("vid").currentTime -=1;
+        }
+    </script>
+
+<h3>Current Time : <output id="op"></output></h3>
+<audio width="550" height="400" loop id="audi">
+    <source src="media/html5.mp4">
+    <source src="media/html5.webm">
+</audio>
+<button onclick="playaudi()">Play</button>
+<button onclick="pauseaudi()">Pause</button>
+<button onclick="stopaudi()">Stop</button>
+<button onclick="rewindvid()">Rewind</button>
+<button onclick="increasevol()">Increase Volume</button>
+<button onclick="decreasevol()">Decrease Volume</button>
+<script>
+    setInterval(function(){
+        document.getElementById("op").value=document.getElementById("audi").currentTime;
+    },10);
+    function playaudi(){
+        document.getElementById("audi").play();
+        document.getElementById("audi").value=0.5;
+    }
+    function pauseaudi(){
+        document.getElementById("audi").pause();
+    }
+    function stopaudi(){
+        document.getElementById("audi").pause();
+        document.getElementById("audi").currentTime=0;
+    }
+    function rewindaudi(){
+        document.getElementById("audi").currentTime -=1;
+    }
+    function increasevol(){
+        document.getElementById("audi").volume +=0.1;
+    }
+    function decreasevol(){
+        document.getElementById("audi").volume -=0.1;
+    }
+</script>
+</body>
+</html>

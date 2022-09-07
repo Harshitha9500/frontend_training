@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function inputhandler(source){
+            document.getElementById(source.type+"op").value=source.value;
+        }
+        function outputhandler(source){
+            document.getElementById("prog").value=source.value;
+        }
+    </script>
+    <style>
+        table{
+            border: solid;
+        }
+       
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>As rendered by browser</th>
+                <th>Value entered by user</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>text</td>
+                <td><input type="text" oninput="inputhandler(this)"></td>
+                <td><output id="textop"></output></td>
+            </tr>
+            <tr>
+                <td>search</td>
+                <td><input type="search" oninput="inputhandler(this)"></td>
+                <td><output id="searchop"></output></td>
+            </tr>
+            <tr>
+                <td>time</td>
+                <td><input type="time" oninput="inputhandler(this)"></td>
+                <td><output id="timeop"></output></td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td><input type="date" oninput="inputhandler(this)"></td>
+                <td><output id="dateop"></output></td>
+            </tr>
+           
+            <tr>
+                <td>email</td>
+                <td><input type="email" oninput="inputhandler(this)"></td>
+                <td><output id="emailop"></output></td>
+            </tr>
+            <tr>
+                <td>tel</td>
+                <td><input type="tel" oninput="inputhandler(this)"></td>
+                <td><output id="telop"></output></td>
+            </tr>
+            <tr>
+                <td>url</td>
+                <td><input type="url" oninput="inputhandler(this)"></td>
+                <td><output id="urlop"></output></td>
+            </tr>
+            <tr>
+                <td>datetime_local</td>
+                <td><input type="datetime-local" oninput="inputhandler(this)"></td>
+                <td><output id="datetime-localop"></output></td>
+            </tr>
+            <tr>
+                <td>number</td>
+                <td><input type="number" oninput="inputhandler(this)"></td>
+                <td><output id="numberop"></output></td>
+            </tr>
+            <tr>
+                <td>month</td>
+                <td><input type="month" oninput="inputhandler(this)"></td>
+                <td><output id="monthop"></output></td>
+            </tr>
+            <tr>
+                <td>week</td>
+                <td><input type="week" oninput="inputhandler(this)"></td>
+                <td><output id="weekop"></output></td>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td><input type="color" oninput="inputhandler(this)"></td>
+                <td><output id="colorop"></output></td>
+            </tr>
+            <tr>
+                <td>range</td>
+                <td><input type="range" oninput="inputhandler(this)"></td>
+                <td><output id="rangeop"></output></td>
+            </tr>
+            <tr>
+                <td>Progress</td>
+                <td><input min="0" max="1" step="0.1" type="range" oninput="outputhandler(this)"></td>
+                <td><progress id="prog"></progress></td>
+            </tr>
+            <tr>
+                <td>Meter</td>
+                <td>
+                    <meter low="0.3" high="0.8" optimum="0.9" value="0.4"></meter></td>
+                
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
