@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3</title>
+    <style>
+        canvas{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="1000" height="1000" id="can"></canvas>
+    <script>
+        
+        var ctx=document.getElementById("can").getContext("2d");
+        ctx.rotate((Math.PI/180)*15);
+        var img1 = new Image();
+        img1.src="images/doctorstrange.jpg";
+        img1.onload=function(){
+            //ctx.rotate((Math.PI/180)*15);
+            ctx.drawImage(img1,200,0); 
+            ctx.strokeStyle="black";
+            ctx.fillStyle="grey";
+            ctx.fillRect(200,278,300,49);
+            ctx.font="bold 35px arial";
+            ctx.fillStyle="black";
+            ctx.fillText("Doctor Strange",240,310);
+            }
+        
+        var img2 = new Image();
+        img2.src="images/hulk.jpg";
+        img2.onload=function(){
+            //ctx.rotate((Math.PI/180)*15);
+            ctx.drawImage(img2,500,0); 
+            ctx.strokeStyle="black";
+            ctx.fillStyle="grey";
+            ctx.fillRect(503,278,300,49);
+            ctx.font="bold 35px arial";
+            ctx.fillStyle="black";
+            ctx.fillText("Hulk",513,310);
+            }
+
+        var img3 = new Image();
+        img3.src="images/ironman.jpg";
+        img3.onload=function(){
+            //ctx.rotate((Math.PI/180)*15);
+            ctx.drawImage(img3,200,325); 
+            ctx.strokeStyle="black";
+            ctx.fillStyle="grey";
+            ctx.fillRect(200,625,300,49);
+            ctx.font="bold 35px arial";
+            ctx.fillStyle="black";
+            ctx.fillText("IronMan",213,660);
+            }
+
+        var img4 = new Image();
+        img4.src="images/falcon.jpg";
+        img4.onload=function(){
+            //ctx.rotate((Math.PI/180)*15);
+            ctx.drawImage(img4,500,325); 
+            ctx.strokeStyle="black";
+            ctx.fillStyle="grey";
+            ctx.fillRect(510,625,300,49);
+            ctx.font="bold 35px arial";
+            ctx.fillStyle="black";
+            ctx.fillText("Joker",513,660);
+            }
+    </script>
+</body>
+</html>
