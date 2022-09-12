@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container{
+        border: 2px solid red;
+        width: 1000px;
+        margin: auto;
+        position: relative;
+    }
+    header{ 
+        height: 100px;
+        background-color: cornflowerblue ;
+        color : aliceblue;
+        text-align: center;
+        font-size: 30px;
+        line-height: 100px;
+        margin: 2px;
+    }
+    #nestedheader{
+        background-color:bisque;
+            border:solid;
+            border-color: black;
+           margin: 2px;
+            display: block;
+            text-align: left;
+            line-height: 100px;
+            height: 100px;
+    }
+    main{
+            background-color: rgb(107, 64, 7);
+            padding: 20px;
+            border:solid;
+            border-color: black;
+            margin: 10px;
+            width:500px;
+            /* display: block; */
+            /* display: table; */
+        }
+     
+        article{
+            background-color:bisque;
+            border:solid;
+            border-color: black;
+           margin: 2px;
+            display: block;
+        }
+        section{
+            background-color: antiquewhite;
+            
+        }
+    footer{ 
+            height: 50px;
+            background-color: cornflowerblue;
+            color : aliceblue;
+            text-align: center;
+            line-height: 50px;
+        }
+        aside{
+            background-color: rgb(107, 64, 7);
+            padding: 20px;
+            border:solid;
+            border-color: black;
+            margin: 10px;
+            display: block;
+            position: absolute;
+            right: 5px;
+            top:100px;
+            width:350px;
+            height:355px;
+        }
+        
+</style>
+   
+</head>
+<body>
+    <div class="container">
+    <header>Header</header>
+    <main>
+        <h1>Main Part</h1>
+        <section>
+            <h2>Section Part</h2>
+            <header id="nestedheader"> Header</header>
+            <article>Article</article>
+            <br>
+            <article>Article</article>
+            <br>
+            <article>Article</article>
+        </section>
+    </main>
+    <aside>
+        Aside
+        <header>Header</header>
+    </aside>
+    <footer>
+        &copy; Copyrights Reserved by Valtech India
+    </footer>
+</div>
+</body>
+</html>
