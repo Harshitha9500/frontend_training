@@ -1,0 +1,17 @@
+section{
+    width:1400px;
+    height:600px;
+    background-color: rgb(187, 14, 129);
+}
+article{
+    width:100px;
+    height: 100px;
+    margin :2px;
+    background-color: rgb(220, 202, 211);
+    float:left
+}
+#photo{
+   src:url("../imgs/phantom.jpg");
+   width:200px;
+   height:200px;
+}

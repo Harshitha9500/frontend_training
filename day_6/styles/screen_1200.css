@@ -1,0 +1,17 @@
+section{
+    width:1400px;
+    height:600px;
+    background-color: rgb(37, 207, 80);
+}
+article{
+    width:100px;
+    height: 100px;
+    margin :2px;
+    background-color: rgb(188, 237, 73);
+    float:left
+}
+#photo{
+   src:url("../imgs/joker.jpg");
+   width:200px;
+   height:200px;
+}

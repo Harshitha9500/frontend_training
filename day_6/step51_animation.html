@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes hack3 {
+            0%{
+                background-color: aqua;
+                transform: rotate(45deg) scale(1,1);
+                border-radius: 10%;
+            }
+            20%{
+                background-color: rgb(46, 97, 148);
+                transform: rotate(90deg) scale(1.5,1.5) ;
+                border-radius: 30%;
+            }
+            40%{
+                background-color: rgb(17, 9, 103);
+                transform: rotate(180deg) scale(2,2);
+                border-radius: 60%;
+            }
+            60%{
+                background-color: rgb(128, 14, 153);
+                transform: rotate(270deg) scale(2.5,2.5);
+                border-radius: 80%;
+            }
+            80%{
+                background-color: rgb(159, 14, 58);
+                transform: rotate(360deg) scale(1.5,1.5);
+                border-radius: 30%;
+            }
+            100%{
+                background-color: aqua;
+                transform: rotate(45deg) scale(1,1);
+                border-radius: 10%;
+
+            }
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin:300px auto;
+        }
+        .box{
+            animation-name: hack3;
+            animation-duration: 2s;  
+            animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
