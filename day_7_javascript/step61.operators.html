@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var count=0;
+        var val1="9";
+        var val2="8";
+        function increaseFun(){
+            count++;
+            document.getElementById("op").value=count;
+        }
+        function check(){
+            if(val1===val2){
+                document.getElementById("op").value="Is True"
+            }else{
+                document.getElementById("op").value="Is False"
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Count is : <output  id="op"></output></h1>
+    <button onclick="increaseFun()">Increase Value</button>
+    <button onclick="check()">Identity check</button>
+</body>
+</html>
