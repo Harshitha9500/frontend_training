@@ -9,13 +9,20 @@
         section{
             margin: 100px auto;
             width:400px;
+            
+        }
+        #al{
+            background-color: rgb(199, 194, 235); 
+            
+            
         }
         div{
-            background-color: aqua; 
+            background-color: rgb(199, 194, 235); 
             padding-left: 3px;          
         }
         .container{
             background-color: rgb(169, 155, 155);
+            padding: 5px;
             
         }
     </style>
@@ -32,7 +39,7 @@
             var len=Math.floor((Math.random()*26)+1);
             for(i=0;i<len;i++){
                 var rand=Math.floor(Math.random()*26);
-                document.getElementById("out").innerHTML+="<br>"+alpha[rand];
+                document.getElementById("out").innerHTML+="<div>"+alpha[rand]+"</div>";
                 
             }
 
@@ -46,6 +53,7 @@
        <button onclick="generate()">Generate Random List</button>
        <br><br>
        <div class="container">
+            Generated Random List <br>
             <span id="out"></span>
        </div>
     </section>
