@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width:500px;
+            height:500px;
+            background-color: blue;
+            margin:10px auto;
+            border:2px solid transparent
+        }
+        .nestedcontainer{
+            width:250px;
+            height:250px;
+            background-color:grey;
+            margin: 100px auto;
+            padding:20px;
+            border:2px solid transparent;
+        }
+        .box{
+            width:150px;
+            height:150px;
+            background-color:azure;
+            margin:30px auto;   
+            border:2px solid transparent;
+        }
+    </style>
+    <script>
+        function clickHandler(evt){
+            //document.getElementById("log").innerHTML+="<p> Type of Event : "+evt.type+"</p>";
+            document.getElementById("log").innerHTML+="<p> Target of Event : "+evt.currentTarget.getAttribute("class")+"</p>";
+            //document.getElementById("log").innerHTML+="<p> Type of Event : "+evt.target.getAttribute("class")+"</p>";
+        }
+        function init(){
+            // document.getElementsByClassName("box")[0].addEventListener("mouseover",clickHandler);
+            // document.getElementsByClassName("box")[0].addEventListener("mouseup",clickHandler);
+            // document.getElementsByClassName("box")[0].addEventListener("mousedown",clickHandler);
+            // document.getElementsByClassName("box")[0].addEventListener("mouseleave",clickHandler);
+            // document.getElementsByClassName("box")[0].addEventListener("click",clickHandler)
+            document.getElementsByClassName("container")[0].addEventListener("click",clickHandler,true)
+            document.getElementsByClassName("nestedcontainer")[0].addEventListener("click",clickHandler,true)
+            document.getElementsByClassName("box")[0].addEventListener("click",clickHandler)
+            document.getElementsByClassName("container")[0].addEventListener("click",clickHandler)
+            document.getElementsByClassName("nestedcontainer")[0].addEventListener("click",clickHandler)
+            
+        }
+        document.addEventListener("DOMContentLoaded",init);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="nestedcontainer">
+            <div class="box"></div>
+        </div>
+    </div>
+    <div id="log"></div>
+</body>
+</html>

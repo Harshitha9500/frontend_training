@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width:1000px;
+            height:400px;
+            background-color: rgb(117, 117, 217);
+            margin: auto;
+            border: 1px black transparent;
+            overflow: auto;
+        }
+        .container div{
+            width:100px;
+            height:100px;
+            background-color: rgb(210, 210, 212);
+            margin: 5px;
+            border: 1px black transparent;
+            float: left;
+            text-align: center;
+            line-height: 100px;
+        }
+        .container div :hover{
+           
+            background-color: rgb(111, 111, 163);
+            
+        }
+    </style>
+    <script>
+        var count=1;
+        var container=null;
+        var ri=null;
+        function boxHandler(evt){
+            if(!evt.target.getAttribute("class",container)){
+                container.removeChild(evt.target);
+            }
+           
+        }
+        // function clickHandler(){       
+        //     var box=document.createElement("div");
+        //     box.textContent=count;
+        //     box.addEventListener("click",boxHandler);
+        //     document.getElementsByClassName("container")[0].appendChild(box);
+        //     count++;
+        // }
+         function init(){
+            container=document.getElementsByClassName("container")[0];
+            container.addEventListener("click",boxHandler);
+            ri=setInterval(function(){
+                var box=document.createElement("div");
+                var btn=document.createElement("button");
+                box.textContent=count;
+                box.innerHTML=btn;
+                //box.addEventListener("click",boxHandler);
+                document.getElementsByClassName("container")[0].appendChild(box);
+                count++;
+                if(count>20){
+                    clearInterval(ri);
+                }
+            },100);
+            
+        }
+         document.addEventListener("DOMContentLoaded",init);
+    </script>
+</head>
+<body>
+    <button>Add Box</button>
+    <div class="container"></div>
+</body>
+</html>
