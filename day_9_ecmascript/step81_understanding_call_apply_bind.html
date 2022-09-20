@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var ironman={
+            firstName:"Tony",
+            lastName:"Stark",
+            power:7,
+            fullName:function (message,city){
+                return message+" "+this.firstName+" "+this.lastName+" is from "+city;
+            }
+        }
+        var spiderman={
+            firstName:"Peter",
+            lastName:"Parker",
+            power:7,
+        }
+        var hulk={
+            firstName:"Bruce",
+            lastName:"Bener",
+            power:7,
+        }
+
+        //console.log(ironman.fullName("i am","new york"));
+
+        console.log(ironman.fullName.call(spiderman,"i am","new york"));
+
+        console.log(ironman.fullName.apply(spiderman,["i am","new york"]));
+
+        var spidermanDetails=ironman.fullName.bind(spiderman);
+        console.log(spidermanDetails("i am","new york"));
+
+
+        console.log(ironman.fullName.call(hulk,"i am","ohio"));
+
+        console.log(ironman.fullName.apply(hulk,["i am","ohio"]));
+
+        var spidermanDetails=ironman.fullName.bind(hulk);
+        console.log(spidermanDetails("i am","ohio"));
+      
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var hero={
+            title:"antman",
+            firstname:"ant",
+            lastname:"man",
+            city:"gotham",
+            power:8
+        };
+
+        // var herotitle=hero;
+        // console.log(hero.title);
+        // herotitle.title="superman";
+        // console.log(herotitle.title);
+        // console.log(hero.title);
+        //var htitle=hero.title, hfirstname=hero.firstname;
+
+  
+        //var {title:htitle, firstname:hfirstname, lastname:hlastname, city:hcity, power:hpower} = hero;
+        //var {title:title, firstname:firstname, lastname:lastname, city:city, power:power} = hero;
+        var {title, firstname, lastname, city, power} = hero;
+
+        console.log(title);
+        title="superwomen";
+        console.log(title)
+        console.log(hero.title)
+
+        var arr=["batman","superman","antman","hulk"];
+        var [firstHero,secondHero,thirdHero,fourthHero]=arr;
+
+        console.log(fourthHero);
+
+        function getFavHeros(){
+            return ["batman","superman","antman","hulk"];
+        }
+        var [firstHero,secondHero,thirdHero,fourthHero]=getFavHeros();
+        console.log(fourthHero);
+
+        // var allvals={...hero};
+        // console.log(allvals.title);
+        // allvals.title="joker";
+        // console.log(allvals.title);
+        // console.log(hero.title);
+
+        var allvals=JSON.parse(JSON.stringify(hero));
+        console.log(JSON.stringify(hero));
+        console.log(allvals);
+        console.log(allvals.title);
+        allvals.title="joker";
+        console.log(allvals.title);
+        console.log(hero.title);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
