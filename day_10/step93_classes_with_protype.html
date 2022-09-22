@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //es3
+        function hero(fname,lname){
+            //private
+            var power=9;
+            //public
+            this.firstname=fname;
+            this.lastname=lname;
+            // this.fullname=function(){
+            //     return this.firstname+" "+this.lastname;
+            // }
+        }
+
+        hero.prototype.fullname=function(){
+            return this.firstname+" "+this.lastname;
+        }
+
+        var heros=new hero("Tony","Stark");
+        console.log(heros.fullname());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
