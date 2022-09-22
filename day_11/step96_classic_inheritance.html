@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Person{
+            constructor(hname){
+                this.name=hname;
+            }
+            canWalk(){
+                return "i can walk";
+            }
+            sayname(){
+                return this.name;
+            }
+        }
+        class Hero extends Person{
+            title="default title";
+            firstname="default firstname";
+            lastname="default lastname";
+            #mission="mission completed";
+            static version=909;
+            constructor(htitle,hfname,hlname,hname){
+                super(hname);
+                this.title=htitle;
+                this.firstname=hfname;
+                this.lastname=hlname;
+            }
+            fullname(){
+                return this.firstname+" "+this.lastname;
+            }
+            static saypower(){
+                return 9;
+            }
+            get mission(){
+                return this.#mission;
+            }
+            set mission(nmission){
+                this.#mission=nmission;
+            }
+        };
+
+        var hero=new Hero("Ironman","Tony","Stark","First Avenger");
+        // console.log(hero.title)
+        // // console.log(hero.#mission);
+
+        // console.log(hero.version);
+        // console.log(Hero.version);
+
+        // console.log(hero.mission);
+        // hero.mission="accomplished";
+        // console.log(hero.mission);
+
+        console.log(hero.canWalk());
+        console.log(hero.sayname());
+        console.log(hero.fullname());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         button{
+            width:540px;
+            margin:10px auto;
+            display:block;
+            background-color: ghostwhite;
+        }
+        .container{
+            width:760px;
+            height:300px;
+            padding:20px;
+            margin:10px auto;
+            background-color: rgb(2, 119, 123);
+            border:2px solid black;
+           
+            display:table;
+            
+        }
+        .container div{
+            width:350px;
+            background-color:lemonchiffon;
+            color:black;          
+            padding:5px;
+            margin:10px;
+            float:left;
+            
+           
+        }
+        .container div:hover{
+            background-color:moccasin;
+           
+        }
+    </style>
+    <script>
+        var xhr=new XMLHttpRequest();
+        xhr.addEventListener("readystatechange",xrhHandler);
+        function xrhHandler(evt){
+            if(evt.target.readyState===4){
+                for(var i=0;i<JSON.parse(evt.target.responseText).root.participant.length;i++){
+                JSON.parse(evt.target.responseText).root.participant.forEach(val=>{
+                    document.getElementsByClassName("container")[0].innerHTML+=document.getElementById("temp").innerHTML
+                    .replace("{firstname}",val.firstname)
+                    .replace("{lastname}",val.lastname)
+                    .replace("{email}",val.email)
+                    .replace("{city}",val.city)
+                }
+                )
+            }
+        }
+        }
+        function clickHandler(){
+            xhr.open("get","data.json",true);
+            xhr.send();
+        }
+        function init(){
+            document.querySelector("button").addEventListener("click",clickHandler);
+        }
+        document.addEventListener("DOMContentLoaded",init);
+    </script>
+</head>
+<body>
+    <button>Get Data</button>
+    <div class="container">
+        <template id="temp">
+            <div>
+                <h2>{firstname} {lastname}</h2>
+                <h3>E-mail : {email}</h3>
+                <h3>City : {city}</h3>
+            </div>
+            </template>
+    </div>
+</body>
+</html>
