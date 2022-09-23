@@ -21,27 +21,39 @@
             margin: 5px;
             border: 1px black transparent;
             float: left;
-            text-align: center;
-            line-height: 100px;
+            /* text-align: center;
+            line-height: 100px; */
         }
+        .container div span{
+            background-color: cadetblue;
+            width:20px;
+            height:20px;
+            float: right;
+        }
+       
     </style>
     <script>
          var count=1;
         var container=null;
         var ri=null;
+        var can=null;
         function boxHandler(evt){
-            if(!evt.target.getAttribute("class",container)){
-                container.removeChild(evt.target);
+            if(evt.target.tagName==="SPAN"){
+                //container.parentNode.removeChild(evt.target);
+                document.getElementsByClassName("container")[0].removeChild(evt.target.parentElement);
             }
         }
         function init(){
             container=document.getElementsByClassName("container")[0];
             container.addEventListener("click",boxHandler);
             ri=setInterval(function(){
-                var box=document.createElement("div");
-                box.textContent=count;
-                //box.addEventListener("click",boxHandler);
-                document.getElementsByClassName("container")[0].appendChild(box);
+                // var box=document.createElement("div");
+                // var box1=document.createElement("div");
+                // box.addEventListener("click",boxHandler);
+                // can=container.appendChild(box);
+                // can.appendChild(box1);
+                
+                document.getElementsByClassName("container")[0].innerHTML+="<div class='box3'><span>X</span></div>";
                 count++;
                 if(count>20){
                     clearInterval(ri);
