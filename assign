@@ -1,0 +1,70 @@
+let redux=require("redux")
+let process=require("process")
+let createStore=redux.legacy_createStore;
+let fs=require("fs");
+
+
+let data=`firstname ${process.argv[2]} \n lastname ${process.argv[3]} \n power ${process.argv[4]} version ${process.argv[5]}`
+fs.appendFile("./data.txt",data,"utf-8",function(err,data){
+    if(err){
+        console.log("error",err)
+    }else{
+        console.log("content is added")
+    }
+})
+
+let text=""
+
+
+fs.readFile("hello.txt","utf-8",function(error,data){
+        if(error){
+            console.log("error",error)
+        }else{
+            text=data;
+        }
+    })
+
+    console.log(text);
+//ACTION
+const USERS_REQUEST = "USERS_REQUEST";
+
+
+//ACTION CREATOR
+let fetchUsers = () => {
+    return {
+        type : USERS_REQUEST
+    }
+}
+
+//initial-state
+let initialState={
+    firstname:'',
+    lastname:'',
+    power:0,
+    version:0
+
+}
+
+//reducer
+const reducer = (state = initialState, action)=>{
+    switch(action.type){
+        case USERS_REQUEST : return {     ...state,
+                                                
+                                            }
+        default : return state
+        
+    }
+};
+
+let store=createStore(reducer);
+
+
+
+let unsubscribe=store.subscribe(()=>{console.log("Value : ",store.getState())});
+
+// store.dispatch(thunkFetchUsers())
+// store.dispatch(thunkAjaxUsers())
+
+store.dispatch(fetchUsers(process.argv[2]))
+store.dispatch(fetchUsers(process.argv[3]))
+
