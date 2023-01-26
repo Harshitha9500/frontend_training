@@ -1,0 +1,26 @@
+<div id="searchbox">
+      <form>
+        <div class="field">
+          <input name="college" type="text" (click)="inputVal()" [(ngModel)]="college" />
+          <label htmlFor="college">Search By College</label>
+          <span class="valspan">
+           {{valCollege}}
+          </span>
+        </div>
+        <br />
+        <div class="field" >
+          <input name="book" type="text" (click)="inputVal()" [(ngModel)]="book" />
+          <label htmlFor="book">Search By Book</label>
+          <span class="valspan">
+            {{valBook}}
+          </span>
+        </div>
+        <br />
+        <br />
+        <button class="searchBtn" type="submit" (click)="searchByCollege(college); validation(college,book)" (mousedown)="searchByBook(book)">
+          Search
+        </button>
+        <!-- (click)="searchBooks(college,book) -->
+        <!-- (click)="searchByCollege(college)" (mousedown)="searchByBook(book) -->
+      </form>
+    </div>
