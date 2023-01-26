@@ -1,0 +1,138 @@
+
+<div id="mainList">
+  <div class="row row-cols-1 row-cols-xl-3 row-cols-xxl-4 row-cols-md-1 row-cols-lg-3 row-cols-sm-1 g-4">
+      <ng-container *ngIf="!searchCol && !searchBook">
+        <!-- <ng-container>{{changeShow()}}</ng-container> -->
+      <div class="col" *ngFor="let val of bookData">
+            <nav>   
+              <a routerLink="/details/{{val._id}}" class="cardlink">
+            <div class="card">
+                  <div id="cardNd">
+                    
+                    <img
+                      src="./assets/background.jpg"
+                      class="card-img-top"
+                      alt="book"
+                      id="listimg"
+                    />
+                    <div id="cardName">{{val.name}}</div>
+                    <div id="cardDate">
+                      <span>{{m(val.createdAt).fromNow()}}</span>
+                  
+                    </div>
+                  </div>
+                  <div id="cardback">
+                    <div class="cardbtn">
+                      College : {{val.college}}
+                    </div>
+                    <div class="cardbtn">
+                      Year : {{val.year}}
+                    </div>
+                    <div class="cardbtn">
+                      Branch : {{val.branch}}
+                    </div>
+                  </div>
+                  <div id="price">
+                    <h5>₹{{val.title}} /-</h5>
+                  </div>
+                  <div id="branch">  
+                        <button id="bran" *ngFor="let x of val.tags">
+                          {{x}} <br />
+                        </button>
+                    
+                  </div>
+                  <div class="likes">
+                    <img src="./assets/like.png" alt="like" width="25" height="23" />
+                    <span id="likenum" *ngIf="val.likes.length===0">Like
+                    </span>
+                    <span id="likenum" *ngIf="val.likes.length===1">{{val.likes.length}} Like
+                    </span>
+                    <span id="likenum" *ngIf="val.likes.length>1">{{val.likes.length}} Likes
+                    </span>
+                  </div>
+          </div>
+        </a>
+        </nav> 
+      </div>
+    </ng-container>
+    <ng-container *ngFor="let val of bookData">
+      <ng-container *ngIf="searchCol==val.college || searchBook==val.name; else notFound">
+        <!-- <ng-container>{{ changeAgain() }}</ng-container> -->
+        <div class="col">
+          <nav>   
+            <a routerLink="/details/{{val._id}}" class="cardlink">
+          <div class="card">
+                <div id="cardNd">
+          
+                  <img
+                    src="./assets/background.jpg"
+                    class="card-img-top"
+                    alt="book"
+                    id="listimg"
+                  />
+                  <div id="cardName">{{val.name}}</div>
+                  <div id="cardDate">
+                    <span>{{m(val.createdAt).fromNow()}}</span>
+                
+                  </div>
+                </div>
+                <div id="cardback">
+                  <div class="cardbtn">
+                    College : {{val.college}}
+                  </div>
+                  <div class="cardbtn">
+                    Year : {{val.year}}
+                  </div>
+                  <div class="cardbtn">
+                    Branch : {{val.branch}}
+                  </div>
+                </div>
+                <div id="price">
+                  <h5>₹{{val.title}} /-</h5>
+                </div>
+                <div id="branch">  
+                      <button id="bran" *ngFor="let x of val.tags">
+                        {{x}} <br />
+                      </button>
+                  
+                </div>
+                <div class="likes">
+                  <img src="./assets/like.png" alt="like" width="25" height="23" />
+                  <span id="likenum" *ngIf="val.likes.length===0">Like
+                  </span>
+                  <span id="likenum" *ngIf="val.likes.length===1">{{val.likes.length}} Like
+                  </span>
+                  <span id="likenum" *ngIf="val.likes.length>1">{{val.likes.length}} Likes
+                  </span>
+                </div>
+        </div>
+      </a>
+      </nav> 
+
+    </div>
+  </ng-container>
+ 
+</ng-container>
+<ng-template #notFound>
+  <ng-container *ngIf=" searchCol || searchBook">
+    <ng-container>{{change()}}</ng-container>
+  </ng-container>
+</ng-template>
+</div>
+<!-- <ng-container *ngFor="let val of bookData">
+<ng-container *ngIf="searchCol!==val.college || searchBook!==val.name ">
+  <ng-container *ngIf=" searchCol || searchBook">
+    <ng-container>{{ change() }}</ng-container>   
+  </ng-container>
+
+</ng-container>
+</ng-container> -->
+
+<ng-container *ngIf="p">
+  <div>  
+    <h1>No Books Found</h1>
+  </div>
+</ng-container>
+
+
+  </div>
