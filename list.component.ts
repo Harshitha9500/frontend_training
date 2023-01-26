@@ -30,15 +30,25 @@ interface Data{
 export class ListComponent implements OnInit {
   bookData:Data[]=book.data;
   m: any;
+  p = false;
+  show=true;
   @Input() searchCol='';
   @Input() searchBook='';
-  coll$:Observable<string>
+  coll$:Observable<any>
   constructor(private store:Store<AppStateInterface>){
     this.coll$ = this.store.pipe(select(collegeSelector));
-    console.log(this.coll$);
+    
   }
   ngOnInit(){
     this.m=moment;
   }
+  changeS(){
+    this.show=false;
+  }
+ 
+  change(){
+    this.p=true;
+  }
+
 
 }
